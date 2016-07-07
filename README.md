@@ -1,2 +1,2 @@
-# vimrc.file
-GVim dotfile
+# vim.file
+vim dotfile
