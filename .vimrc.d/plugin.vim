@@ -537,7 +537,15 @@ noremap <expr><silent> <c-c> quickrun#is_running() ? quickrun#sweep_sessions() :
 "" Config plugin nathanaelkane/vim-indent-guides
 "
 let g:indent_guides_enable_on_vim_startup = 1
-let g:indent_guides_auto_colors = 1
+let g:indent_guides_auto_colors           = 0
+let g:indent_guides_indent_levels         = 30
+let g:indent_guides_color_change_percent  = 10
+let g:indent_guides_guide_size            = 1
+let g:indent_guides_start_level           = 2
+let g:indent_guides_space_guides          = 1
+let g:indent_guides_tab_guides            = 0
+let g:indent_guides_soft_pattern          = '\s'
+
 
 """
 "" Config plugin xolox/vim-session
@@ -759,10 +767,10 @@ let g:splitjoin_ruby_trailing_comma  = 1
 """
 "" Config plugin KabbAmine/vCoolor.vim
 "
-let g:vcoolor_map          = ''
-let g:vcoolor_ins_rgb_map  = '<c-i><c-c>'
-let g:vcoolor_ins_rgba_map = ''
-let g:vcoolor_ins_hsl_map  = ''
+"let g:vcoolor_map          = ''
+"let g:vcoolor_ins_rgb_map  = ''
+"let g:vcoolor_ins_rgba_map = ''
+"let g:vcoolor_ins_hsl_map  = ''
 
 """
 "" Config built-in plugin 2html.vim
