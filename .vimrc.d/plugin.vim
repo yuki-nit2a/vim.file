@@ -116,6 +116,9 @@ NeoBundleLazy 'wavded/vim-stylus'
 NeoBundleLazy 'kchmck/vim-coffee-script'
 NeoBundleLazy 'gabrielelana/vim-markdown'
 
+"" Picker
+NeoBundle 'KabbAmine/vCoolor.vim'
+
 "" Local plugins
 NeoBundle g:vimrc.dir.repo . 'yuki-nit2a/lightwell.vim/'
 NeoBundle g:vimrc.dir.repo . 'yuki-nit2a/snippet.lib/'
@@ -587,18 +590,18 @@ let g:vdebug_options= {
 "" Config plugin scrooloose/syntastic
 "
 let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_loc_list_height = 5
+let g:syntastic_auto_loc_list            = 1
+let g:syntastic_loc_list_height          = 5
 
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 1
-let g:syntastic_aggregate_errors = 1
-let g:syntastic_id_checkers = 1
+let g:syntastic_check_on_open          = 1
+let g:syntastic_check_on_wq            = 1
+let g:syntastic_aggregate_errors       = 1
+let g:syntastic_id_checkers            = 1
 let g:syntastic_sort_aggregated_errors = 1
 
-let g:syntastic_echo_current_error = 1
-let g:syntastic_enable_signs = 1
-let g:syntastic_enable_balloons = 1
+let g:syntastic_echo_current_error  = 1
+let g:syntastic_enable_signs        = 1
+let g:syntastic_enable_balloons     = 1
 let g:syntastic_enable_highlighting = 1
 
 let g:syntastic_mode_map = {
@@ -617,7 +620,7 @@ let g:syntastic_php_phpmd_post_args = 'codesize,design,unusedcode'
 """
 "" Config plugin tyru/open-browser.vim
 "
-let g:openbrowser_use_vimproc = 1
+let g:openbrowser_use_vimproc                 = 1
 let g:openbrowser_force_foreground_after_open = 0
 
 command! OpenBrowserCurrent execute 'OpenBrowser' 'file:///' . expand('%:p:gs?\\?/?')
@@ -626,8 +629,8 @@ command! OpenBrowserCurrent execute 'OpenBrowser' 'file:///' . expand('%:p:gs?\\
 "" Config plugin t9md/vim-quickhl
 "
 let g:quickhl_manual_enable_at_startup = 0
-let g:quickhl_cword_enable_at_startup = 0
-let g:quickhl_tag_enable_at_startup = 0
+let g:quickhl_cword_enable_at_startup  = 0
+let g:quickhl_tag_enable_at_startup    = 0
 
 map -t <plug>(quickhl-cword-toggle)
 map -a <Plug>(quickhl-manual-this)
@@ -691,36 +694,36 @@ noremap -u :Fontzoom!<cr>
 """
 "" Config plugin osyo-manga/vim-over
 "
-let g:over_enable_auto_nohlsearch = 1
-let g:over_enable_cmd_window = 1
-let g:over_command_line_prompt = '> '
-let g:over_command_line_key_mappings = {}
-let g:over#command_line#search#enable_incsearch = 1
-let g:over#command_line#search#enable_move_cursor = 0
-let g:over#command_line#paste_escape_chars = '\.*$^~()[]{}'
-let g:over#command_line#paste_filters = {
+let g:over_enable_auto_nohlsearch                    = 1
+let g:over_enable_cmd_window                         = 1
+let g:over_command_line_prompt                       = '> '
+let g:over_command_line_key_mappings                 = {}
+let g:over#command_line#search#enable_incsearch      = 1
+let g:over#command_line#search#enable_move_cursor    = 0
+let g:over#command_line#paste_escape_chars           = '\.*$^~()[]{}'
+let g:over#command_line#paste_filters                = {
     \ '\n': '\\n',
     \ '\r': '\\r',
 \ }
 let g:over#command_line#substitute#highlight_pattern = 'Search'
-let g:over#command_line#substitute#highlight_string = 'Error'
-let g:over#command_line#enable_Digraphs = 1
+let g:over#command_line#substitute#highlight_string  = 'Error'
+let g:over#command_line#enable_Digraphs              = 1
 
 noremap gs :OverCommandLine<cr>%s/
 
 """
 "" Config plugin mattesgroeger/vim-bookmarks
 "
-let g:bookmark_sign = 'B'
-let g:bookmark_annotation_sign = 'B'
-let g:bookmark_save_per_working_dir = 0
-let g:bookmark_manage_per_buffer = 0
-let g:bookmark_auto_save = 1
-let g:bookmark_auto_save_file = g:vimrc.dir.var . 'plugin-cache/mattesgroeger/vim-bookmarks/bookmarks'
-let g:bookmark_auto_close = 0
-let g:bookmark_center = 1
-let g:bookmark_show_warning = 0
-let g:bookmark_highlight_lines = 0
+let g:bookmark_sign                    = 'B'
+let g:bookmark_annotation_sign         = 'B'
+let g:bookmark_save_per_working_dir    = 0
+let g:bookmark_manage_per_buffer       = 0
+let g:bookmark_auto_save               = 1
+let g:bookmark_auto_save_file          = g:vimrc.dir.var . 'plugin-cache/mattesgroeger/vim-bookmarks/bookmarks'
+let g:bookmark_auto_close              = 0
+let g:bookmark_center                  = 1
+let g:bookmark_show_warning            = 0
+let g:bookmark_highlight_lines         = 0
 let g:bookmark_no_default_key_mappings = 1
 
 noremap gb :BookmarkToggle<cr>
@@ -734,12 +737,12 @@ noremap gx :BookmarkClearAll<cr>
 "
 let g:ac_smooth_scroll_no_default_key_mappings = 1
 let g:ac_smooth_scroll_visualmode_key_mappings = 1
-let g:ac_smooth_scroll_enable_accelerating = 1
-let g:ac_smooth_scroll_disable_relativenumber = 1
-let g:ac_smooth_scroll_du_sleep_time_msec = 0
-let g:ac_smooth_scroll_fb_sleep_time_msec = 0
-let g:ac_smooth_scroll_min_limit_msec = 0
-let g:ac_smooth_scroll_max_limit_msec = 1000
+let g:ac_smooth_scroll_enable_accelerating     = 1
+let g:ac_smooth_scroll_disable_relativenumber  = 1
+let g:ac_smooth_scroll_du_sleep_time_msec      = 0
+let g:ac_smooth_scroll_fb_sleep_time_msec      = 0
+let g:ac_smooth_scroll_min_limit_msec          = 0
+let g:ac_smooth_scroll_max_limit_msec          = 1000
 
 map <c-f> <plug>(ac-smooth-scroll-c-f)
 map <c-b> <plug>(ac-smooth-scroll-c-b)
@@ -750,14 +753,22 @@ map <c-d> <plug>(ac-smooth-scroll-c-d)
 "" Config plugin AndrewRadev/splitjoin.vim
 "
 let g:splitjoin_normalize_whitespace = 1
-let g:splitjoin_trailing_comma = 1
-let g:splitjoin_ruby_trailing_comma = 1
+let g:splitjoin_trailing_comma       = 1
+let g:splitjoin_ruby_trailing_comma  = 1
+
+"""
+"" Config plugin KabbAmine/vCoolor.vim
+"
+let g:vcoolor_map          = ''
+let g:vcoolor_ins_rgb_map  = '<c-i><c-c>'
+let g:vcoolor_ins_rgba_map = ''
+let g:vcoolor_ins_hsl_map  = ''
 
 """
 "" Config built-in plugin 2html.vim
 "
-let use_xhtml = 0
+let use_xhtml         = 0
 let html_use_encoding = 'utf-8'
-let html_use_css = 1
-let html_no_pre = 0
+let html_use_css      = 1
+let html_no_pre       = 0
 let html_number_lines = 1
