@@ -25,10 +25,10 @@ noremap fK <c-w>K
 noremap fL <c-w>L
 noremap fH <c-w>H
 
-noremap ffh :split<cr>
-noremap ffl :vsplit<cr>
-noremap ffj :vsplit<cr>
+noremap ffh :vsplit<cr>
+noremap ffj :split<cr>
 noremap ffk :split<cr>
+noremap ffl :vsplit<cr>
 
 noremap fd 10<c-w>>
 noremap fr 10<c-w>+
