@@ -40,7 +40,7 @@ noremap fwj <c-w>J
 noremap fwk <c-w>K
 noremap fwl <c-w>L
 
-noremap <c-w> :bunload<cr>
+noremap <c-w><c-w> :bunload<cr>
 noremap <c-w><c-q><c-w><c-q> :bunload!<cr>
 
 "" Modify
