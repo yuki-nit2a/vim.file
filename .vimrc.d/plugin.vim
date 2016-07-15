@@ -116,6 +116,9 @@ NeoBundleLazy 'wavded/vim-stylus'
 NeoBundleLazy 'kchmck/vim-coffee-script'
 NeoBundleLazy 'gabrielelana/vim-markdown'
 
+"" Markdown
+NeoBundle 'kurocode25/mdforvim'
+
 "" Picker
 NeoBundle 'KabbAmine/vCoolor.vim'
 
@@ -153,9 +156,9 @@ call unite#custom#profile('default', 'context', {
     \ 'split': 0,
 \ })
 
-let g:unite_source_file_mru_limit = 1000
-let g:vinarise_enable_auto_detect = 1
-let g:unite_data_directory = g:vimrc.dir.var . 'plugin-cache/Shougo/unite.vim/'
+let g:unite_source_file_mru_limit      = 1000
+let g:vinarise_enable_auto_detect      = 1
+let g:unite_data_directory             = g:vimrc.dir.var . 'plugin-cache/Shougo/unite.vim/'
 let g:unite_force_overwrite_statusline = 0
 
 nnoremap <silent> <space>y :UniteResume<cr>
@@ -187,14 +190,14 @@ let g:neomru#directory_mru_path = expand(g:vimrc.dir.var . 'plugin-cache/Shougo/
 """
 "" Config plugin Shougo/neocomplete.vim
 "
-let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_at_startup                 = 1
 
-let g:neocomplete#enable_smart_case = 1
+let g:neocomplete#enable_smart_case                 = 1
 let g:neocomplete#sources#syntax#min_keyword_length = 2
-let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+let g:neocomplete#lock_buffer_name_pattern          = '\*ku\*'
 
-let g:neocomplete#data_directory = g:vimrc.dir.var . 'plugin-cache/Shougo/neocomplete.vim/'
-let g:neocomplete#sources#dictionary#dictionaries = {
+let g:neocomplete#data_directory                    = g:vimrc.dir.var . 'plugin-cache/Shougo/neocomplete.vim/'
+let g:neocomplete#sources#dictionary#dictionaries   = {
     \ 'default' :  '',
     \ 'php'     :  g:vimrc.dir.repo . 'yuki-nit2a/dictionary.lib/dict/php.dict',
 \ }
@@ -425,15 +428,15 @@ endfunction
 """
 "" Config plugin sjl/gundo.vim
 "
-let g:gundo_width = 30
-let g:gundo_preview_height = 10
-let g:gundo_preview_bottom = 1
-let g:gundo_right = 0
-let g:gundo_help = 0
-let g:gundo_map_move_older = 'j'
-let g:gundo_map_move_newer = 'k'
-let g:gundo_close_on_revert = 0
-let g:gundo_playback_delay = 5
+let g:gundo_width            = 30
+let g:gundo_preview_height   = 10
+let g:gundo_preview_bottom   = 1
+let g:gundo_right            = 0
+let g:gundo_help             = 0
+let g:gundo_map_move_older   = 'j'
+let g:gundo_map_move_newer   = 'k'
+let g:gundo_close_on_revert  = 0
+let g:gundo_playback_delay   = 5
 let g:gundo_return_on_revert = 1
 
 noremap <space>g :GundoShow<cr>
@@ -441,44 +444,44 @@ noremap <space>g :GundoShow<cr>
 """
 "" Config plugin ludovicchabant/vim-gutentags
 "
-let g:gutentags_enabled = 1
-let g:gutentags_auto_set_tags = 1
+let g:gutentags_enabled             = 1
+let g:gutentags_auto_set_tags       = 1
 let g:gutentags_generate_on_missing = 1
-let g:gutentags_generate_on_new = 1
-let g:gutentags_generate_on_write = 1
-let g:gutentags_background_update = 1
-let g:gutentags_resolve_symlinks = 0
-let g:gutentags_tagfile = g:vimrc.dir.var . 'tag/'
-let g:gutentags_cache_dir = g:vimrc.dir.var . 'plugin-cache/ludovicchabant/vim-gutentags/'
-let g:gutentags_exclude = [
+let g:gutentags_generate_on_new     = 1
+let g:gutentags_generate_on_write   = 1
+let g:gutentags_background_update   = 1
+let g:gutentags_resolve_symlinks    = 0
+let g:gutentags_tagfile             = g:vimrc.dir.var . 'tag/'
+let g:gutentags_cache_dir           = g:vimrc.dir.var . 'plugin-cache/ludovicchabant/vim-gutentags/'
+let g:gutentags_exclude             = [
 \ ]
 
 """
 "" Config plugin majutsushi/tagbar
 "
-let g:tagbar_left = 1
-let g:tagbar_vartical = 0
-let g:tagbar_width = 25
-let g:tagbar_autofocus = 1
-let g:tagbar_autoclose = 0
-let g:tagbar_zoomwidth = 0
-let g:tagbar_expand = 0
-let g:tagbar_singleclick = 0
+let g:tagbar_left                  = 1
+let g:tagbar_vartical              = 0
+let g:tagbar_width                 = 25
+let g:tagbar_autofocus             = 1
+let g:tagbar_autoclose             = 0
+let g:tagbar_zoomwidth             = 0
+let g:tagbar_expand                = 0
+let g:tagbar_singleclick           = 0
 
-let g:tagbar_autopreview = 0
-let g:tagbar_previewwin_pos = 'topleft'
+let g:tagbar_autopreview           = 0
+let g:tagbar_previewwin_pos        = 'topleft'
 
-let g:tagbar_compact = 1
-let g:tagbar_indent = 1
-let g:tagbar_sort = 0
-let g:tagbar_foldlevel = 99
-let g:tagbar_autoshowtag = 1
-let g:tagbar_show_visibility = 1
-let g:tagbar_show_linenumbers = 1
-let g:tagbar_hide_nopublic = 0
-let g:tagbar_iconchars = ['>', '|']
+let g:tagbar_compact               = 1
+let g:tagbar_indent                = 1
+let g:tagbar_sort                  = 0
+let g:tagbar_foldlevel             = 99
+let g:tagbar_autoshowtag           = 1
+let g:tagbar_show_visibility       = 1
+let g:tagbar_show_linenumbers      = 1
+let g:tagbar_hide_nopublic         = 0
+let g:tagbar_iconchars             = ['>', '|']
 
-let g:tagbar_phpctags_bin = g:vimrc.dir.var . 'plugin/tagbar-phpctags/bin/phpctags'
+let g:tagbar_phpctags_bin          = g:vimrc.dir.var . 'plugin/tagbar-phpctags/bin/phpctags'
 let g:tagbar_phpctags_memory_limit = '512M'
 
 noremap <space>v :TagbarToggle<cr>
@@ -763,6 +766,11 @@ map <c-d> <plug>(ac-smooth-scroll-c-d)
 let g:splitjoin_normalize_whitespace = 1
 let g:splitjoin_trailing_comma       = 1
 let g:splitjoin_ruby_trailing_comma  = 1
+
+"""
+"" Config plugin 'kurocode25/mdforvim'
+"
+let g:previm_open_cmd = 'firefox'
 
 """
 "" Config plugin KabbAmine/vCoolor.vim

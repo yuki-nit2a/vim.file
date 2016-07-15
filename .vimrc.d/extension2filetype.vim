@@ -2,11 +2,12 @@ augroup AssociateExtensionToFileType
     autocmd!
 
     let s:map = {
-        \ '*.coffee'    : 'coffee',
-        \ '*.volt'      : 'html',
-        \ '*.tpl'       : 'tpl',
-        \ 'Vagrantfile' : 'ruby',
-        \ '*.{md|mkd}'  : 'markdown',
+        \ '*.babel.js':                 'es6',
+        \ '*.coffee':                   'coffee',
+        \ '*.volt':                     'html',
+        \ '*.tpl':                      'tpl',
+        \ 'Vagrantfile':                'ruby',
+        \ '*.{md|mkd|mkdn|mdwn|mark*}': 'markdown',
     \ }
 
     for [s:pattern, s:filetype] in items(s:map)
