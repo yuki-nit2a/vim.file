@@ -99,7 +99,7 @@ NeoBundle 'osyo-manga/vim-over'
 "" Input supporter
 NeoBundle 'junegunn/vim-easy-align'
 NeoBundle 'scrooloose/nerdcommenter'
-NeoBundle 'tpope/vim-surround'
+"NeoBundle 'tpope/vim-surround'
 NeoBundle 'AndrewRadev/splitjoin.vim'
 
 NeoBundle 'mattn/emmet-vim'
@@ -560,7 +560,7 @@ let g:session_default_name = '.default.vim'
 let g:session_extension = '.vim'
 let g:session_default_overwrite = 0
 let g:session_lock_enabled = 1
-let g:session_autoload = 'no'
+let g:session_autoload = 'prompt'
 let g:session_autosave = 'yes'
 let g:session_autosave_periodic = 1
 let g:session_autosave_silent = 0

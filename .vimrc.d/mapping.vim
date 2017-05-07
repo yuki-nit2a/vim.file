@@ -5,7 +5,7 @@
 "" Mode
 noremap s :
 
-noremap! <c-g><c-g> <esc>
+noremap! <c-g> <esc>
 
 "" Tab
 noremap tn :tabnew<cr>
@@ -14,8 +14,14 @@ noremap tj gt
 noremap tk gT
 noremap tl gt
 
-"" Buffer
+"" Window
 noremap f <nop>
+
+noremap ffh :vsplit<cr>
+noremap ffj :split<cr>
+noremap ffk :split<cr>
+noremap ffl :vsplit<cr>
+
 noremap fj <c-w>j
 noremap fk <c-w>k
 noremap fl <c-w>l
@@ -24,11 +30,6 @@ noremap fJ <c-w>J
 noremap fK <c-w>K
 noremap fL <c-w>L
 noremap fH <c-w>H
-
-noremap ffh :vsplit<cr>
-noremap ffj :split<cr>
-noremap ffk :split<cr>
-noremap ffl :vsplit<cr>
 
 noremap fd 10<c-w>>
 noremap fr 10<c-w>+
@@ -40,12 +41,14 @@ noremap fwj <c-w>J
 noremap fwk <c-w>K
 noremap fwl <c-w>L
 
-noremap <c-w><c-w> :bunload<cr>
-noremap <c-w><c-q><c-w><c-q> :bunload!<cr>
+noremap <c-w><c-w> :close<cr>
+noremap <c-q><c-q><c-q> :quit<cr>
+
+"" Buffer
 
 "" Modify
-noremap <tab> >>
-noremap <s-tab> <<
+noremap <tab> >
+noremap <s-tab> <
 
 "" Edit
 imap <c-c> <bs>
@@ -83,8 +86,8 @@ noremap! <c-j> <down>
 noremap! <c-k> <up>
 noremap! <c-l> <right>
 
-noremap! <c-g><c-h> <c-o>^
-noremap! <c-g><c-l> <c-o>$
+"noremap! <c-g><c-h> <c-o>^
+"noremap! <c-g><c-l> <c-o>$
 
 vnoremap <c-u> 30k
 vnoremap <c-d> 30j
@@ -105,7 +108,7 @@ noremap ,s :w<cr>
 
 "" Search
 noremap fs /
-noremap -e :nohlsearch<cr>
+noremap fe :nohlsearch<cr>
 
 "" QuickFix
 noremap gn :cnext<cr>
@@ -116,13 +119,5 @@ noremap gq :cclose<cr>
 nnoremap tk <c-o>
 nnoremap tj <c-i>
 
-"" Quit
-noremap <c-q><c-q><c-q> :quit<cr>
-
 "" Run vim-script itself
 noremap <c-f11> :source %:p<cr>
-
-"""
-"" Turn off IME at outed insert mode
-"
-inoremap <esc> <esc>:set<space>iminsert=0<cr>
