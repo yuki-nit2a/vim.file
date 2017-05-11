@@ -6,6 +6,10 @@ My vim configuration dotfiles-O-Matic
 * Download and place kaoriya-gvim
 * delete following files in kaoriya-gvim dir: origdoc patch plugins switches CHANGES.md gvimrc README.txt vimrc
 
+### font
+
+* install Tamsyn font
+
 ### in shell
 
 * `bash ./install.sh path/to/yourHomeDir`
