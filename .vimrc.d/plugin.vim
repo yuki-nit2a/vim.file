@@ -286,19 +286,19 @@ let g:NERDTreeIndicatorMapCustom = {
 """
 "" Config plugin jistr/vim-nerdtree-tabs
 "
-let g:nerdtree_tabs_open_on_gui_startup = 0
+let g:nerdtree_tabs_open_on_gui_startup     = 0
 let g:nerdtree_tabs_open_on_console_startup = 0
-let g:nerdtree_tabs_no_startup_for_diff = 1
-let g:nerdtree_tabs_smart_startup_focus = 1
-let g:nerdtree_tabs_open_on_new_tab = 1
-let g:nerdtree_tabs_meaningful_tab_names = 1
-let g:nerdtree_tabs_autoclose = 1
-let g:nerdtree_tabs_synchronize_view = 1
-let g:nerdtree_tabs_synchronize_focus = 1
-let g:nerdtree_tabs_focus_on_files = 0
-let g:nerdtree_tabs_startup_cd = 1
+let g:nerdtree_tabs_no_startup_for_diff     = 1
+let g:nerdtree_tabs_smart_startup_focus     = 1
+let g:nerdtree_tabs_open_on_new_tab         = 1
+let g:nerdtree_tabs_meaningful_tab_names    = 1
+let g:nerdtree_tabs_autoclose               = 1
+let g:nerdtree_tabs_synchronize_view        = 1
+let g:nerdtree_tabs_synchronize_focus       = 1
+let g:nerdtree_tabs_focus_on_files          = 0
+let g:nerdtree_tabs_startup_cd              = 1
 
-nnoremap <silent> <space>n :NERDTreeTabsToggle<cr>
+nnoremap <silent> <space>n :GundoHide<cr>:NERDTreeTabsToggle<cr>
 
 """
 "" Config plugin airblade/vim-gitgutter
@@ -439,22 +439,21 @@ let g:gundo_close_on_revert  = 0
 let g:gundo_playback_delay   = 5
 let g:gundo_return_on_revert = 1
 
-noremap <space>g :GundoShow<cr>
+noremap <space>g :NERDTreeClose<cr>:GundoShow<cr>
 
 """
 "" Config plugin ludovicchabant/vim-gutentags
 "
 let g:gutentags_enabled             = 1
-let g:gutentags_auto_set_tags       = 1
 let g:gutentags_generate_on_missing = 1
 let g:gutentags_generate_on_new     = 1
 let g:gutentags_generate_on_write   = 1
 let g:gutentags_background_update   = 1
 let g:gutentags_resolve_symlinks    = 0
-let g:gutentags_tagfile             = g:vimrc.dir.var . 'tag/'
 let g:gutentags_cache_dir           = g:vimrc.dir.var . 'plugin-cache/ludovicchabant/vim-gutentags/'
-let g:gutentags_exclude             = [
-\ ]
+let g:gutentags_ctags_tagfile       = g:vimrc.dir.var . 'tag/'
+let g:gutentags_ctags_exclude       = []
+let g:gutentags_ctags_auto_set_tags = 1
 
 """
 "" Config plugin majutsushi/tagbar
@@ -553,49 +552,51 @@ let g:indent_guides_soft_pattern          = '\s'
 """
 "" Config plugin xolox/vim-session
 " 
-let g:session_directory      = g:vimrc.dir.var . 'session/save/'
-let g:session_autosave_to    = g:vimrc.dir.var . 'session/autosave/'
-let g:session_lock_directory = g:vimrc.dir.var . 'session/lock/'
-let g:session_default_name = '.default.vim'
-let g:session_extension = '.vim'
+let g:session_directory         = g:vimrc.dir.var . 'session/save/'
+let g:session_autosave_to       = g:vimrc.dir.var . 'session/autosave/'
+let g:session_lock_directory    = g:vimrc.dir.var . 'session/lock/'
+let g:session_default_name      = '.default.vim'
+let g:session_extension         = '.vim'
 let g:session_default_overwrite = 0
-let g:session_lock_enabled = 1
-let g:session_autoload = 'prompt'
-let g:session_autosave = 'yes'
+let g:session_lock_enabled      = 1
+let g:session_autoload          = 'prompt'
+let g:session_autosave          = 'yes'
 let g:session_autosave_periodic = 1
-let g:session_autosave_silent = 0
-let g:session_verbose_messages = 0
-let g:session_default_to_last = 0
-let g:session_persist_font = 0
+let g:session_autosave_silent   = 0
+let g:session_verbose_messages  = 0
+let g:session_default_to_last   = 0
+let g:session_persist_font      = 0
 "let g:session_persist_globals =
 "let g:session_restart_environment =
-let g:session_command_aliases = 1
-let g:session_menu = 1
+let g:session_command_aliases   = 1
+let g:session_menu              = 1
 "let g:session_name_suggestion_function =
 
+noremap <space>s :SessionSave<cr>
+noremap <space>a :SessionOpen<cr>
 noremap ,asdfr :RestartVim<cr>
 
 """
 "" Config plugin joonty/vdebug
 "
 let g:vdebug_options= {
-    \ 'port' : 9000,
-    \ 'server' : '',
-    \ 'timeout' : 600,
-    \ 'on_close' : 'detach',
-    \ 'break_on_open' : 1,
-    \ 'ide_key' : '',
-    \ 'path_maps' : {
-        \ '/media/sf_www': 'C:/-/var/www',
-    \ },
+    \ 'port'               : 9001,
+    \ 'server'             : '',
+    \ 'timeout'            : 600,
+    \ 'on_close'           : 'detach',
+    \ 'break_on_open'      : 1,
+    \ 'ide_key'            : 'DEBUGGER',
     \ 'debug_window_level' : 0,
-    \ 'debug_file_level' : 0,
-    \ 'debug_file' : '',
+    \ 'debug_file_level'   : 0,
+    \ 'debug_file'         : '',
     \ 'watch_window_style' : 'expanded',
-    \ 'marker_default' : '⬦',
+    \ 'marker_default'     : '⬦',
     \ 'marker_closed_tree' : '▸',
-    \ 'marker_open_tree' : '▾',
+    \ 'marker_open_tree'   : '▾',
 \ }
+"    \ 'path_maps'          : {
+"        \ '/home/yuki/www' : 'N:/www',
+"    \ },
 
 """
 "" Config plugin scrooloose/syntastic
